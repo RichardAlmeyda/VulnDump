@@ -6,30 +6,24 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar" style="margin-bottom: 20px; display: flex; gap: 20px; align-items: center;">
-    <a href="/">🏠 Home</a>
-    <a href="/search">🔍 Search</a>
-    <a href="/about">❓ About</a>
-    <a href="https://github.com/RichardAlmeyda" target="_blank">⭐ GitHub</a>
-  </nav>
   <div class="container">
     <h1>🛡️ VulnDump: Attack Vectors</h1>
 
     <form method="get" class="filters">
-      <select name="target_type" onchange="this.form.submit()" title="Filter by target type">
-        <option value="">Target: All</option>
-        <option value="WebApp" {% if target_type == 'WebApp' %}selected{% endif %}>WebApp</option>
-        <option value="Network" {% if target_type == 'Network' %}selected{% endif %}>Network</option>
-        <option value="System" {% if target_type == 'System' %}selected{% endif %}>System</option>
+  <select name="target_type" onchange="this.form.submit()">
+    <option value="">Target: All</option>
+    <option value="WebApp" {% if target_type == 'WebApp' %}selected{% endif %}>WebApp</option>
+    <option value="Network" {% if target_type == 'Network' %}selected{% endif %}>Network</option>
+    <option value="System" {% if target_type == 'System' %}selected{% endif %}>System</option>
+  </select>
+    <select name="subtype" onchange="this.form.submit()">
+      <option value="">Subtype: All</option>
+      {% for st in subtypes %}
+        <option value="{{ st }}" {% if subtype == st %}selected{% endif %}>{{ st }}</option>
+      {% endfor %}
+    </select>
       </select>
-      <select name="subtype" onchange="this.form.submit()" title="Filter by subtype">
-        <option value="">Subtype: All</option>
-        {% for st in subtypes %}
-          <option value="{{ st }}" {% if subtype == st %}selected{% endif %}>{{ st }}</option>
-        {% endfor %}
-      </select>
-      <select name="phase" onchange="this.form.submit()" title="Filter by attack phase">
+      <select name="phase" onchange="this.form.submit()">
         <option value="">Phase: All</option>
         <option value="Reconnaissance" {% if phase == 'Reconnaissance' %}selected{% endif %}>Reconnaissance</option>
         <option value="Enumeration" {% if phase == 'Enumeration' %}selected{% endif %}>Enumeration</option>
@@ -40,9 +34,9 @@
         <option value="Cleanup" {% if phase == 'Cleanup' %}selected{% endif %}>Cleanup</option>
         <option value="Persistence" {% if phase == 'Persistence' %}selected{% endif %}>Persistence</option>
       </select>
-      <input type="text" name="q" placeholder="Search in tools & notes" value="{{ q|default('') }}" title="Type to search">
-      <button type="submit" title="Search">🔍</button>
-      <a href="/" class="reset-btn" title="Reset all filters">Reset Filters</a>
+      <input type="text" name="q" placeholder="Search in tools & notes" value="{{ q|default('') }}">
+      <button type="submit">🔍</button>
+      <a href="/" class="reset-btn">Reset Filters</a>
     </form>
 
     {% macro highlight(text, query) -%}
@@ -52,6 +46,11 @@
         {{ text }}
       {% endif %}
     {%- endmacro %}
+    <div style="margin-bottom: 10px;">
+    <a href="https://github.com/RichardAlmeyda" target="_blank">
+        ⭐ GitHub
+    </a>
+    </div>
 
     <ul class="vuln-list">
       {% for entry in entries %}
@@ -68,9 +67,5 @@
     </ul>
     <div class="results-count">{{ entries|length }} results</div>
   </div>
-  <!-- Footer -->
-  <footer style="margin-top: 40px; text-align: center; color: #888; font-size: 0.95em;">
-    VulnDump &copy; 2025 | <a href="/about" style="color: #66d9ef;">About</a> | <a href="https://github.com/RichardAlmeyda" target="_blank" style="color: #66d9ef;">GitHub</a>
-  </footer>
 </body>
 </html>
