@@ -17,7 +17,7 @@ Features
 
 🛠️ Self-hosted: Easily run locally or on a cloud host like PythonAnywhere.
 
-================
+
 Demo
 You can see a live demo here:
 https://vulndump.pythonanywhere.com/
@@ -25,7 +25,7 @@ https://vulndump.pythonanywhere.com/
 ===============
 Getting Started
 
-Prerequisites Python 3.8+ , Flask , (Optional) A PythonAnywhere account for cloud deployment or any cloud
+Prerequisites Python 3.8+ , Flask 
 ==============
 **Installation**
 
