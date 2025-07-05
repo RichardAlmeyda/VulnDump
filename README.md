@@ -17,16 +17,16 @@ Features
 
 🛠️ Self-hosted: Easily run locally or on a cloud host like PythonAnywhere.
 
-=============================================================
+================
 Demo
 You can see a live demo here:
 https://vulndump.pythonanywhere.com/
 
-===========================================================
+===============
 Getting Started
 
 Prerequisites Python 3.8+ , Flask , (Optional) A PythonAnywhere account for cloud deployment or any cloud
-==========================================================
+==============
 **Installation**
 
 --> git clone https://github.com/yourusername/VulnDump.git
@@ -40,7 +40,7 @@ Prerequisites Python 3.8+ , Flask , (Optional) A PythonAnywhere account for clou
 python app.py
 Open http://localhost:5000 in your browser.
 
-========================================================
+============
 
 **Usage**
 Use the dropdowns to filter by Target Type, Subtype (e.g., CMS), and Phase.
@@ -54,7 +54,7 @@ Click on any entry for detailed command syntax and notes.
 Data Structure
 The app reads its data from a CSV file with the following columns:
 
-====================================================================
+==================
 ...
 Update VulnDump_Vectors.csv to expand the database.
 On first run, the CSV will be imported to an SQLite DB automatically.
@@ -65,7 +65,7 @@ Add Techniques: Edit or append to VulnDump_Vectors.csv.
 UI: Customize templates/index.html and static/style.css for your preferred look.
 
 Deployment: Works on PythonAnywhere, local Linux, or any Flask-compatible host.
-===================================================================
+=================
 
 License
 MIT License.
