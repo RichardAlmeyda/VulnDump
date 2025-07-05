@@ -54,7 +54,7 @@ Click on any entry for detailed command syntax and notes.
 Data Structure
 The app reads its data from a CSV file with the following columns:
 
-==================
+
 ...
 Update VulnDump_Vectors.csv to expand the database.
 On first run, the CSV will be imported to an SQLite DB automatically.
@@ -65,7 +65,7 @@ Add Techniques: Edit or append to VulnDump_Vectors.csv.
 UI: Customize templates/index.html and static/style.css for your preferred look.
 
 Deployment: Works on PythonAnywhere, local Linux, or any Flask-compatible host.
-=================
+
 
 License
 MIT License.
