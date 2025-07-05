@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ vuln[1] }} — VulnDump</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ vuln[1] }}</h1>
+        <p><strong>Severity:</strong> {{ vuln[4] }} | <strong>Date:</strong> {{ vuln[5] }}</p>
+        <p><strong>Tags:</strong> {{ vuln[3] }}</p>
+        <p><strong>Affected Products:</strong> {{ vuln[6] }}</p>
+        <h2>Description</h2>
+        <p>{{ vuln[2] }}</p>
+        <h2>Exploit Code</h2>
+        <pre>{{ vuln[7] }}</pre>
+        <h2>References</h2>
+        <p>{{ vuln[8] }}</p>
+        <a href="/">← Back to Home</a>
+    </div>
+</body>
+</html>

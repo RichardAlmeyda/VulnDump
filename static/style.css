@@ -1,0 +1,109 @@
+body {
+  background: #0f1117;
+  color: #e5e5e5;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #f92672;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+}
+
+a {
+  color: #66d9ef;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+pre {
+  background: #1c1f26;
+  padding: 10px;
+  border: 1px solid #333;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+select, input[type="text"], button {
+  background: #1b1d24;
+  color: #f0f0f0;
+  padding: 6px 10px;
+  margin: 5px 5px 10px 0;
+  border: 1px solid #444;
+  border-radius: 4px;
+}
+button, .copy-btn {
+  background: #303644;
+  border: 1px solid #555;
+  color: #ddd;
+  font-size: 14px;
+}
+button:hover, .copy-btn:hover {
+  background: #272b34;
+  cursor: pointer;
+}
+
+ul.vuln-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul.vuln-list li {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+ul.vuln-list .badge {
+  background: #444;
+  padding: 2px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  margin-left: 8px;
+  color: #fff;
+}
+form.filters {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+input[type=\"text\"] {
+  width: 190px;
+}
+.reset-btn {
+  background: transparent;
+  border: 1px solid #aaa;
+  color: #ccc;
+  padding: 6px 10px;
+  margin-left: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+.reset-btn:hover {
+  border-color: #fff;
+  color: #fff;
+}
+mark {
+  background: #fdfd96;
+  color: #222;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+.results-count {
+  margin-top: 10px;
+  color: #bbb;
+  font-size: 14px;
+}

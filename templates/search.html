@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search — VulnDump</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Search Results for "{{ query }}"</h1>
+        <form action="/search">
+            <input type="text" name="q" value="{{ query }}" placeholder="Search again...">
+            <button type="submit">Search</button>
+        </form>
+        <ul class="vuln-list">
+            {% for vuln in results %}
+                <li>
+                    <a href="{{ url_for('vuln_detail', vuln_id=vuln[0]) }}">{{ vuln[1] }}</a>
+                    <span class="badge">{{ vuln[2] }}</span>
+                </li>
+            {% else %}
+                <li>No results found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

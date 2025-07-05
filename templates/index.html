@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>VulnDump — Pentest Toolkit</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🛡️ VulnDump: Attack Vectors</h1>
+
+    <form method="get" class="filters">
+  <select name="target_type" onchange="this.form.submit()">
+    <option value="">Target: All</option>
+    <option value="WebApp" {% if target_type == 'WebApp' %}selected{% endif %}>WebApp</option>
+    <option value="Network" {% if target_type == 'Network' %}selected{% endif %}>Network</option>
+    <option value="System" {% if target_type == 'System' %}selected{% endif %}>System</option>
+  </select>
+    <select name="subtype" onchange="this.form.submit()">
+      <option value="">Subtype: All</option>
+      {% for st in subtypes %}
+        <option value="{{ st }}" {% if subtype == st %}selected{% endif %}>{{ st }}</option>
+      {% endfor %}
+    </select>
+      </select>
+      <select name="phase" onchange="this.form.submit()">
+        <option value="">Phase: All</option>
+        <option value="Reconnaissance" {% if phase == 'Reconnaissance' %}selected{% endif %}>Reconnaissance</option>
+        <option value="Enumeration" {% if phase == 'Enumeration' %}selected{% endif %}>Enumeration</option>
+        <option value="Scanning" {% if phase == 'Scanning' %}selected{% endif %}>Scanning</option>
+        <option value="Exploitation" {% if phase == 'Exploitation' %}selected{% endif %}>Exploitation</option>
+        <option value="Privilege Escalation" {% if phase == 'Privilege Escalation' %}selected{% endif %}>Privilege Escalation</option>
+        <option value="Post Exploitation" {% if phase == 'Post Exploitation' %}selected{% endif %}>Post Exploitation</option>
+        <option value="Cleanup" {% if phase == 'Cleanup' %}selected{% endif %}>Cleanup</option>
+        <option value="Persistence" {% if phase == 'Persistence' %}selected{% endif %}>Persistence</option>
+      </select>
+      <input type="text" name="q" placeholder="Search in tools & notes" value="{{ q|default('') }}">
+      <button type="submit">🔍</button>
+      <a href="/" class="reset-btn">Reset Filters</a>
+    </form>
+
+    {% macro highlight(text, query) -%}
+      {% if query %}
+        {{ text|replace(query, '<mark>' ~ query ~ '</mark>')|safe }}
+      {% else %}
+        {{ text }}
+      {% endif %}
+    {%- endmacro %}
+    <div style="margin-bottom: 10px;">
+    <a href="https://github.com/RichardAlmeyda" target="_blank">
+        ⭐ GitHub
+    </a>
+    </div>
+
+    <ul class="vuln-list">
+      {% for entry in entries %}
+        <li>
+          <a href="{{ url_for('entry_detail', entry_id=entry[0]) }}"><b>{{ entry[4] }}</b></a>
+          <span class="badge">{{ entry[1] }} / {{ entry[2] }} / {{ entry[3] }}</span>
+          <div class="notes">
+            {{ highlight(entry[6], q) }}
+          </div>
+        </li>
+      {% else %}
+        <li style="color: #888; font-style: italic;">No results found.</li>
+      {% endfor %}
+    </ul>
+    <div class="results-count">{{ entries|length }} results</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ entry[4] }} — VulnDump</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>{{ entry[4] }}</h1>
+    <p>
+      <strong>Category:</strong> {{ entry[1] }} / <strong>{{ entry[2] }}</strong> / <strong>{{ entry[3] }}</strong>
+    </p>
+    <h2>Command</h2>
+    <pre id="command-block">{{ entry[5] }}</pre>
+    <button class="copy-btn" onclick="copyCommand()">📋 Copy Command</button>
+    <h2>Notes</h2>
+    <p>{{ entry[6] }}</p>
+    <a href="/">← Back to list</a>
+  </div>
+  <script>
+    function copyCommand() {
+      const text = document.getElementById('command-block').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('✅ Command copied to clipboard!');
+      });
+    }
+  </script>
+</body>
+</html>
