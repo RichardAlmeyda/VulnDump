@@ -22,7 +22,7 @@ Demo
 You can see a live demo here:
 https://vulndump.pythonanywhere.com/
 
-===============
+
 Getting Started
 
 Prerequisites Python 3.8+ , Flask 
