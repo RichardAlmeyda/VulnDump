@@ -1,8 +1,12 @@
-<p align="center">
-  <a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-webapp-grey?logo=flask"></a>
-  <img src="https://img.shields.io/badge/WEB%20APP-black?style=flat-square">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg"></a>
-</p>
+<!-- Badges: bigger size, left aligned, only Flask, Web App, and Python -->
+<a href="https://www.python.org/">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white&style=for-the-badge" height="32">
+</a>
+<a href="https://flask.palletsprojects.com/">
+  <img src="https://img.shields.io/badge/Flask-web%20framework-grey?logo=flask&logoColor=white&style=for-the-badge" height="32">
+</a>
+<img src="https://img.shields.io/badge/WEB%20APP-black?style=for-the-badge" height="32">
+
 
 # 🚩 VulnDump
 
