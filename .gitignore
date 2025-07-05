@@ -153,7 +153,8 @@ venv.bak/
 
 # mkdocs documentation
 /site
-.VulnDump_Vectors.db
+vulndump.db
+
 # mypy
 .mypy_cache/
 .dmypy.json
