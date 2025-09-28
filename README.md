@@ -45,6 +45,7 @@
 ## 🚀 Live Demo
 
 See it in action:  
+!for any suspicious actions on the page u will be baned!
 **[https://vulndump.pythonanywhere.com/](https://vulndump.pythonanywhere.com/)**
 
 ---
