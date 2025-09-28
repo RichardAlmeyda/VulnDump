@@ -62,3 +62,5 @@ See it in action:
 git clone https://github.com/yourusername/VulnDump.git
 cd VulnDump
 pip install -r requirements.txt
+
+pyhthon3 app.py
