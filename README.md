@@ -48,8 +48,8 @@ See it in action:
 
 **[https://vulndump.pythonanywhere.com/](https://vulndump.pythonanywhere.com/)**
 
- ⚠️ For any suspicious actions on the page, you will be banned!
 ---
+⚠️ For any suspicious actions on the page, you will be banned!
 
 ## ⚡ Getting Started
 
