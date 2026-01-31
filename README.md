@@ -60,7 +60,7 @@ See it in action:
 
 ### **Installation**
 ```bash
-git clone https://github.com/yourusername/VulnDump.git
+git clone https://github.com/RichardAlmeyda/VulnDump.git
 cd VulnDump
 pip install -r requirements.txt
 
